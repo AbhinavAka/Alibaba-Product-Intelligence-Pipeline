@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS product_details
+(
+    product_id bigint NOT NULL,
+    product_url text,
+    product_name text,
+    machine_type text,
+    model text,
+    brand text,
+    power text,
+    capacity text,
+    price text,
+    min_order text,
+    supplier_name text,
+    supplier_type text,
+    rating text,
+    years_in_business text,
+    city text,
+    state text,
+    delivery_time text,
+    warranty text,
+    platform text,
+    scrape_date text,
+    data_inserted timestamp without time zone DEFAULT now(),
+    CONSTRAINT product_details_pkey PRIMARY KEY (product_id)
+)
