@@ -7,11 +7,13 @@ import os
 
 load_dotenv()
 
+# Initialize the LLM.
 llm = LLM(
     model=os.getenv("OPENAI_MODEL_NAME"),
     temperature=0.1
 )
 
+# This file defines the AlibabaCrawler class, which contains two methods: crawler_agent and formatter_agent. The crawler_agent method creates an agent that is responsible for crawling Alibaba product pages using the Firecrawl tool and extracting raw product information. The formatter_agent method creates an agent that formats the extracted product information into a structured JSON format that matches a predefined schema. Both agents are designed to work together in a workflow where the crawler agent extracts data and the formatter agent structures it for further use.
 class AlibabaCrawler:
     
     def crawler_agent(self):

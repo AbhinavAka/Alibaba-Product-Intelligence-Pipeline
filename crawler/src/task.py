@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional, List
 
-
+# This file defines the tasks for crawling Alibaba product pages and formatting the extracted data. It includes a TaskOutput schema for structuring the output data and an IndustrialMachineryTasks class that contains methods for creating specific tasks related to crawling and formatting product information from Alibaba.
 class Product(BaseModel):
 
     product_name: Optional[str]
@@ -27,9 +27,13 @@ class Product(BaseModel):
     platform: str
     scrape_date: str
 
+
+# This schema defines the structure of the output data that will be produced by the formatting task. It contains a list of Product objects, which represent the extracted product information in a structured format.
 class TaskOutput(BaseModel):
     products: List[Product]
 
+
+# This class contains methods for creating tasks related to crawling Alibaba product pages and formatting the extracted data. 
 class IndustrialMachineryTasks:
 
     def __init__(self, agent, product_url):

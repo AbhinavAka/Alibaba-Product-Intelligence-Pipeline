@@ -1,14 +1,15 @@
 import psycopg2
 from psycopg2.extras import RealDictCursor ,execute_values
+import os
 
 # This file defines functions for saving extracted product data into a PostgreSQL database. It includes a function to create a database connection and a function to save product data based on a given product ID. The save_data_in_db function takes the product ID and the extracted product data, structures it according to the expected schema, and executes SQL queries to insert the data into the product_details table and update the product_id_tracker table to mark the product as crawled.
 def create_connection():
     conn = psycopg2.connect(
-        host="localhost",
-        database="assessment",
-        user="postgres",
-        password="postgres",
-        port= '5432'
+        host=os.getenv("DB_HOST"),
+        database=os.getenv("DB_NAME"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        port=os.getenv("DB_PORT")
     )
     return conn
 

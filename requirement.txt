@@ -1,0 +1,8 @@
+crewai
+firecrawl
+pandas
+pydantic
+python-dotenv
+requests
+playwright
+textwrap
